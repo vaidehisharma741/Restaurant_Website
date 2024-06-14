@@ -3,20 +3,3 @@
     padding: 0;
     box-sizing: border-box;
 }
-.home
-{
-    color:orange;
-    font-size:4rem;
-    font-family: "Dancing Script", cursive;
-    font-weight: 700;
-    font-style: normal;
-    position: relative;
-    
-} 
-.headerContainer
-{
-    position: absolute;
-    top: 30%;
-    left: 14%;
-}
-

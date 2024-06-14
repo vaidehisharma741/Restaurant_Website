@@ -6,7 +6,7 @@ import Twitter  from '@mui/icons-material/Twitter';
 
 const Footer = () => {
   return (
-    <Box sx={{ bgcolor: 'black', color: 'white', py: 2, mt: 'auto', textAlign: 'center' }}>
+    <Box sx={{color: 'black', py: 2, mt: 'auto', textAlign: 'center' }}>
         <Box sx={{
             "& svg":
             {

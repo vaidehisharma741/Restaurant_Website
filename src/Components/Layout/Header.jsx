@@ -5,9 +5,6 @@ import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
-import SearchIcon from '@mui/icons-material/Search';
-import InputBase from '@mui/material/InputBase';
-import { styled, alpha } from '@mui/material/styles';
 import MenuIcon from '@mui/icons-material/Menu';
 import Drawer from '@mui/material/Drawer';
 import List from '@mui/material/List';
@@ -15,46 +12,7 @@ import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 import Hidden from '@mui/material/Hidden';
 
-const Search = styled('div')(({ theme }) => ({
-  position: 'relative',
-  borderRadius: theme.shape.borderRadius,
-  backgroundColor: alpha(theme.palette.common.white, 0.15),
-  '&:hover': {
-    backgroundColor: alpha(theme.palette.common.white, 0.25),
-  },
-  marginLeft: 0,
-  width: '100%',
-  [theme.breakpoints.up('sm')]: {
-    marginLeft: theme.spacing(1),
-    width: 'auto',
-  },
-}));
 
-const SearchIconWrapper = styled('div')(({ theme }) => ({
-  padding: theme.spacing(0, 2),
-  height: '100%',
-  position: 'absolute',
-  pointerEvents: 'none',
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-}));
-
-const StyledInputBase = styled(InputBase)(({ theme }) => ({
-  color: 'inherit',
-  '& .MuiInputBase-input': {
-    padding: theme.spacing(1, 1, 1, 0),
-    paddingLeft: `calc(1em + ${theme.spacing(4)})`,
-    transition: theme.transitions.create('width'),
-    width: '100%',
-    [theme.breakpoints.up('sm')]: {
-      width: '12ch',
-      '&:focus': {
-        width: '20ch',
-      },
-    },
-  },
-}));
 
 export default function SearchAppBar() {
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -69,8 +27,8 @@ export default function SearchAppBar() {
         <ListItem button component={Link} to="/" onClick={handleDrawerToggle}>
           <ListItemText primary="Home" />
         </ListItem>
-        <ListItem button component={Link} to="/about" onClick={handleDrawerToggle}>
-          <ListItemText primary="About" />
+        <ListItem button component={Link} to="/services" onClick={handleDrawerToggle}>
+          <ListItemText primary="Services" />
         </ListItem>
         <ListItem button component={Link} to="/contact" onClick={handleDrawerToggle}>
           <ListItemText primary="Contact" />
@@ -83,8 +41,8 @@ export default function SearchAppBar() {
   );
 
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static" sx={{ backgroundColor: 'black' }}>
+    <Box sx={{ flexGrow: 1 ,  marginTop: 1}}>
+      <AppBar position="static" sx={{ background: '#790000', boxShadow: '0px -4px 10px rgba(0, 0, 0, 0.3), 0px 4px 10px rgba(0, 0, 0, 0.3)' ,color:'white'}}>
         <Toolbar>
           <Hidden smUp>
             <IconButton
@@ -103,9 +61,8 @@ export default function SearchAppBar() {
             edge="start"
             color="inherit"
             aria-label="open drawer"
-            sx={{ mr: 2 }}
           >
-            <img src="Logo.png" height={"40px"} width={"49px"} />
+            {/* <img src="logo.png" height={"40px"} width={"40px"} /> */}
           </IconButton>
           <Hidden smDown>
             <Box sx={{ flexGrow: 1, display: 'flex', justifyContent: 'center', cursor: 'pointer' }}>
@@ -122,17 +79,17 @@ export default function SearchAppBar() {
                 variant="h6"
                 noWrap
                 component={Link}
-                to="/about"
-                sx={{ mx: 2, display: { xs: 'none', sm: 'block' }, color: 'inherit', textDecoration: 'none' }}
+                to="/services"
+                sx={{ mx: 2, display: { xs: 'none', sm: 'block' }, color: 'inherit', textDecoration: 'none'}}
               >
-                About
+                Services
               </Typography>
               <Typography
                 variant="h6"
                 noWrap
                 component={Link}
                 to="/contact"
-                sx={{ mx: 2, display: { xs: 'none', sm: 'block' }, color: 'inherit', textDecoration: 'none' }}
+                sx={{ mx: 2, display: { xs: 'none', sm: 'block' }, color: 'inherit', textDecoration: 'none'}}
               >
                 Contact
               </Typography>
@@ -141,21 +98,12 @@ export default function SearchAppBar() {
                 noWrap
                 component={Link}
                 to="/menu"
-                sx={{ mx: 2, display: { xs: 'none', sm: 'block' }, color: 'inherit', textDecoration: 'none' }}
+                sx={{ mx: 2, display: { xs: 'none', sm: 'block' }, color: 'inherit', textDecoration: 'none'}}
               >
                 Menu
               </Typography>
             </Box>
           </Hidden>
-          <Search sx={{ marginLeft: 'auto' }}>
-            <SearchIconWrapper>
-              <SearchIcon />
-            </SearchIconWrapper>
-            <StyledInputBase
-              placeholder="Search…"
-              inputProps={{ 'aria-label': 'search' }}
-            />
-          </Search>
         </Toolbar>
       </AppBar>
       <Drawer
