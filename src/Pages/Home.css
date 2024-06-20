@@ -1,80 +1,128 @@
-:root
-{
-    --red: #790000;
-    --darkRed:#420000;
-}
-.home
-{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content:center;
-    position: relative;
-    height: 100vh;
-}
-.backgroundImg
-{
-    position: relative;
-}
-.backgroundImg img
-{
-    height: 80vh;
-    width: 90vw;
-    object-fit: cover;
-}
-.container
-{
-    position: absolute;
-    top: 94%;
-}
-.mainHeading
-{
-    text-align: center;
-    color: var(--darkRed);
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 40px;
-}
-.mainContent
-{
-    text-align:center;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 48px;
-    margin-bottom: 100px;
-}
-.imageContainer
-{
-    height:140px;
-    width:316px;
-    object-fit:cover;
-    border-radius: 18px 18px 0px 0px;
-}
-.foodOne ,.foodTwo, .foodThree
-{
-    padding: 6px;
-    height: 300px;
-    width: 328px;
-    background-color: var(--red);
-    border-radius: 20px;
-    display: flex;
-    flex-direction: column;
-}
-.mainContentPara
-{
-    color: white;
-}
-.orderButton
-{
-    background-color: var(--darkRed);
-    color: white;
-    margin-top: auto;
-    height: 40px;
-    border-radius: 18px;
-    border: none;
-    font-size: medium;  
-    margin-bottom: 8px; 
-    cursor: pointer
-    ;
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  /* height: 100vh; */
 }
 
+.container {
+  position: absolute;
+  top: 110%;
+}
+
+.mainHeading {
+  text-align: center;
+  color: var(--darkRed);
+  font-size: 40px;
+}
+
+.mainContent {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 48px;
+  margin-bottom: 100px;
+}
+
+.imageContainer {
+  height: 140px;
+  width: 316px;
+  object-fit: cover;
+  border-radius: 18px 18px 0px 0px;
+}
+
+.foodOne,
+.foodTwo,
+.foodThree {
+  padding: 6px;
+  height: 310px;
+  width: 328px;
+  background-color: var(--red);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  top: 40px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.foodOne:hover,
+.foodTwo:hover,
+.foodThree:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.mainContentPara {
+  color: white;
+  padding-top: 10px;
+}
+
+.orderButton {
+  background-color: var(--darkRed);
+  color: white;
+  margin-top: 10px;
+  height: 40px;
+  border-radius: 18px;
+  border: none;
+  font-size: medium;
+  cursor: pointer;
+  width: 100%;
+}
+
+/* Ensure the background images fit their containers */
+.backgroundImg {
+  width: 90%;
+  overflow: hidden;
+  position: relative;
+}
+
+.backgroundImg img 
+{
+  object-fit: cover;
+}
+
+.slick-slide img {
+  width: 100%;
+  display: block;
+}
+/* 
+/* Optional: Style the dots for the slider */
+.slick-dots li button:before {
+  font-size: 12px;
+  color: white;
+} 
+
+
+.slick-dots li.slick-active button:before {
+  color: #3498db; /* Active dot color */
+}
+
+/* Optional: Custom button styling */
+.slick-prev:before,
+.slick-next:before {
+  color: white; /* Color of the arrow buttons */
+}
+
+.custom-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.next-arrow {
+  right: 10px;
+}
+
+.prev-arrow {
+  left: 10px;
+}

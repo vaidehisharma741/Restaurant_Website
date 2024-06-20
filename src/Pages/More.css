@@ -1,0 +1,46 @@
+.More
+{
+    margin-bottom: 100px;
+}
+.mainHeading
+{
+    text-align: center;
+    color: var(--darkRed);
+    font-size: 40px;
+}
+.moreSection
+{
+    display: flex;
+    justify-content: center;
+    gap: 130px;
+    position: relative;
+    top: 40px;
+    text-align: center;
+   
+}
+.moreContentDeliveryIcon
+{
+    height: 300px;
+    width:300px;
+    background-color:var(--red);
+    border-radius: 20px;
+    cursor: pointer;
+    padding-top: 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+}
+.moreContentRestaurantIcon
+{
+    height: 300px;
+    width:300px;  
+    background-color:var(--red);
+    border-radius: 20px;
+    padding-top: 60px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.moreContentRestaurantIcon:hover,.moreContentDeliveryIcon:hover
+{
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
